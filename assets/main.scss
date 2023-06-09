@@ -1,0 +1,68 @@
+@import "./sass/variable";
+
+.un {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    height:300px;
+    .container {
+        width:500px;
+        .btn {
+            background: $cd-btn-start;
+            color: $cd-txt;
+            font-size: 1.5rem;
+            border: 4px solid $cd-btn;
+            cursor: pointer;
+            padding: 1.85rem 3rem;
+            border-radius: 10rem;
+            // transition-property: transform;/*indique au navigateur a quel propriété le navigateur doit appliquer la transition*/
+            // transition-duration: 400ms;
+            transition: transform 400ms;/*proprité raccourcie*/
+            &:hover {
+                transform:scale(1.15);
+                background: $cd-btn-end;
+            }
+        }
+    }
+    .container2 {
+        background-color: rgb(237,246,247);
+    }
+    .form{
+        .warningmessage {
+            display:none;
+        }
+        &__group {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:$cd-txt2;
+            & input {
+                border:2px solid $cd-box;
+                border-radius:100rem;
+                color:$cd-txt2;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2.5rem;
+                outline: none;
+                padding: .5rem 1.5rem;
+                margin: 1.5rem 1.5rem;
+                width: 100%;
+                transition:background-color 500ms;
+                &:focus {
+                    border: 2px solid $cd-txt2;
+                    }
+                    &:not(:focus):invalid {/*jusqu'a ecriture du @*/
+                        background:$cd-danger;
+                        border:2px solid $cd-danger;
+                        color:$cd-txt--invalid;
+                        
+                    }/*cette effet permet d'avertir l'user qu'il na pas saisie une adresse mail*/
+                    &:not(:focus):invalid + .warningmessage {
+                        display:block;
+                    }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*chapitre 2*/
+/*chapitre 3 Créez des transitions CSS à propriétés multiples*/
+.un {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.un .container {
+  width: 500px;
+}
+.un .container .btn {
+  background: rgba(1, 28, 55, 0);
+  color: #15DEA5;
+  font-size: 1.5rem;
+  border: 4px solid #011c37;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+  transition: transform 400ms; /*proprité raccourcie*/
+}
+.un .container .btn:hover {
+  transform: scale(1.15);
+  background: rgb(1, 28, 55);
+}
+.un .container2 {
+  background-color: rgb(237, 246, 247);
+}
+.un .form .warningmessage {
+  display: none;
+}
+.un .form__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6300a0;
+}
+.un .form__group input {
+  border: 2px solid #fff;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  margin: 1.5rem 1.5rem;
+  width: 100%;
+  transition: background-color 500ms;
+  /*cette effet permet d'avertir l'user qu'il na pas saisie une adresse mail*/
+}
+.un .form__group input:focus {
+  border: 2px solid #6300a0;
+}
+.un .form__group input:not(:focus):invalid { /*jusqu'a ecriture du @*/
+  background: #b20a37;
+  border: 2px solid #b20a37;
+  color: #fff;
+}
+.un .form__group input:not(:focus):invalid + .warningmessage {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */
