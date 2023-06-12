@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 300px;
+  margin-bottom: 200px;
 }
 .un .container {
   width: 500px;
@@ -19,7 +20,8 @@
   cursor: pointer;
   padding: 1.85rem 3rem;
   border-radius: 10rem;
-  transition: transform 400ms; /*proprité raccourcie*/
+  transition: transform 450ms, background-color 300ms 150ms; /* all /*transform*/ /*400ms;/*proprité raccourcie*/
+  /*transition-delay: 0, 150ms;*/
 }
 .un .container .btn:hover {
   transform: scale(1.15);
@@ -27,17 +29,26 @@
 }
 .un .container2 {
   background-color: rgb(237, 246, 247);
+  padding: 50px;
 }
-.un .form .warningmessage {
+.un .form .warningmail {
   display: none;
+  color: red;
+}
+.un .form .warningpseudo {
+  display: block;
 }
 .un .form__group {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #6300a0;
+  flex-direction: column;
 }
-.un .form__group input {
+.un .form__group label {
+  font-size: 1.5rem;
+}
+.un .form__group > .input-mail {
   border: 2px solid #fff;
   border-radius: 100rem;
   color: #6300a0;
@@ -50,16 +61,40 @@
   transition: background-color 500ms;
   /*cette effet permet d'avertir l'user qu'il na pas saisie une adresse mail*/
 }
-.un .form__group input:focus {
+.un .form__group > .input-mail:focus {
   border: 2px solid #6300a0;
 }
-.un .form__group input:not(:focus):invalid { /*jusqu'a ecriture du @*/
+.un .form__group > .input-mail:focus {
+  border: 2px solid #6300a0;
+}
+.un .form__group > .input-mail:not(:focus):invalid { /*jusqu'a ecriture du @*/
   background: #b20a37;
   border: 2px solid #b20a37;
   color: #fff;
 }
-.un .form__group input:not(:focus):invalid + .warningmessage {
+.un .form__group > .input-mail:not(:focus):invalid + .warningmail {
   display: block;
+}
+.un .form__group > .input-pseudo {
+  border: 2px solid #fff;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  margin: 1.5rem 1.5rem;
+  width: 100%;
+  transition: background-color 500ms;
+}
+.un .form__group > .input-pseudo:focus {
+  border: 2px solid #6300a0;
+}
+.un .form__group > .input-pseudo:invalid {
+  background: #b20a37;
+}
+.un .form__group > .input-pseudo:valid + .warningpseudo {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

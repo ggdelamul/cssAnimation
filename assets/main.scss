@@ -6,6 +6,7 @@
     justify-content:center;
     align-items:center;
     height:300px;
+    margin-bottom:200px;
     .container {
         width:500px;
         .btn {
@@ -18,7 +19,8 @@
             border-radius: 10rem;
             // transition-property: transform;/*indique au navigateur a quel propriété le navigateur doit appliquer la transition*/
             // transition-duration: 400ms;
-            transition: transform 400ms;/*proprité raccourcie*/
+            transition: transform 450ms /*ici transition-delay a 0*/, background-color 300ms 150ms/*transition delay*/; /* all /*transform*/ /*400ms;/*proprité raccourcie*/
+            /*transition-delay: 0, 150ms;*/
             &:hover {
                 transform:scale(1.15);
                 background: $cd-btn-end;
@@ -27,39 +29,48 @@
     }
     .container2 {
         background-color: rgb(237,246,247);
+        padding:50px;
     }
     .form{
-        .warningmessage {
+        .warningmail {
             display:none;
+            color:red;
+        }
+        .warningpseudo {
+            display: block;    
         }
         &__group {
             display:flex;
             justify-content: center;
             align-items: center;
             color:$cd-txt2;
-            & input {
-                border:2px solid $cd-box;
-                border-radius:100rem;
-                color:$cd-txt2;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 2.5rem;
-                outline: none;
-                padding: .5rem 1.5rem;
-                margin: 1.5rem 1.5rem;
-                width: 100%;
-                transition:background-color 500ms;
+            flex-direction:column;
+            & label {
+                font-size: 1.5rem;;
+            }
+            &>.input-mail {
+                @include inputStyle;
                 &:focus {
                     border: 2px solid $cd-txt2;
-                    }
-                    &:not(:focus):invalid {/*jusqu'a ecriture du @*/
-                        background:$cd-danger;
-                        border:2px solid $cd-danger;
-                        color:$cd-txt--invalid;
+                }
+                &:not(:focus):invalid {/*jusqu'a ecriture du @*/
+                    background:$cd-danger;
+                    border:2px solid $cd-danger;
+                    color:$cd-txt--invalid;
                         
-                    }/*cette effet permet d'avertir l'user qu'il na pas saisie une adresse mail*/
-                    &:not(:focus):invalid + .warningmessage {
-                        display:block;
-                    }
+                }/*cette effet permet d'avertir l'user qu'il na pas saisie une adresse mail*/
+                &:not(:focus):invalid + .warningmail {
+                    display:block;
+                }
+            }
+            &>.input-pseudo{
+                @include inputStyle;
+                &:invalid {
+                    background:$cd-danger;
+                }
+                &:valid + .warningpseudo{
+                    display:none;
+                }
             }
         }
     }

@@ -18,16 +18,24 @@
             </div>
         </div>
     </section>
+    
    <section class="un">
        <h2>Déclenchez vos transitions avec les pseudoclasses</h2>
        <h3>valider un formulaire</h3>
        <div class="container2">
         <div class="form">
             <div class="form__group">
-                <label for="">email</label>
-                <input type="email" name="" id="">
-                <div class="warningmessage">
+                <label for="">Email</label>
+                <input type="email" name="" id="" class="input-mail">
+                <div class="warningmail">
                     <p>Votre adresse mail doit contenir un @</p>
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="">Pseudo</label>
+                <input type="text" name="" id="" minlength="4" class="input-pseudo">
+                <div class="warningpseudo">
+                    <p>votre pseudo doit contenir au moins 4 caractères</p>
                 </div>
             </div>
            
