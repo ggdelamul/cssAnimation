@@ -8,7 +8,8 @@ $cd-danger: #b20a37;
 /*chapitre 3 Créez des transitions CSS à propriétés multiples*/
 $cd-btn-start: rgba(1, 28, 55, 0);
 $cd-btn-end: rgba(1, 28, 55, 1);
-
+/*chapitre 4 animation fluide avec propiété transform */
+$ball-size:200px;
 @mixin inputStyle {
                 border:2px solid $cd-box;
                 border-radius:100rem;

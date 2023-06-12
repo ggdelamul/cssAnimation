@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*chapitre 2*/
 /*chapitre 3 Créez des transitions CSS à propriétés multiples*/
+/*chapitre 4 animation fluide avec propiété transform */
 .un {
   display: flex;
   flex-direction: column;
@@ -92,9 +93,38 @@
 }
 .un .form__group > .input-pseudo:invalid {
   background: #b20a37;
+  color: #fff;
 }
 .un .form__group > .input-pseudo:valid + .warningpseudo {
   display: none;
+}
+
+.deux .container-ball {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 50px;
+}
+.deux .container-ball .btn {
+  background: #b20a37;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10rem;
+  width: 200px;
+  height: 25px;
+  color: white;
+}
+.deux .container-ball .btn:hover + .ball {
+  transform: scale(1.15);
+}
+.deux .container-ball .ball {
+  width: 200px;
+  height: 200px;
+  background: #15DEA5;
+  margin-bottom: 1rem;
+  border-radius: 100px;
+  transform: scale(1);
+  transition: transform 350ms;
 }
 
 /*# sourceMappingURL=style.css.map */
